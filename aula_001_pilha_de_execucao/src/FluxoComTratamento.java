@@ -19,7 +19,7 @@ public class FluxoComTratamento {
 
     private static void metodo2() {
         System.out.println("Inicio do metodo2");
-        throw new ArithmeticException("Algo deu errado");
+        throw new MyException("Algo deu errado");
         // System.out.println("Fim do metodo2");
     }
 }
