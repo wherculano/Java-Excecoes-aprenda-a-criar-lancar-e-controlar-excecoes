@@ -10,9 +10,9 @@ public class Fluxo {
         System.out.println("Inicio do metodo1");
         try {
             metodo2();
-        } catch (ArithmeticException ex) {
-            System.out.println("ArithmeticException: Não foi possível fazer divisão por 0");
-            // O try/catch estando aqui, na primeira divisao por zero o metodo 2 (loop for) será encerrado.
+        } catch (ArithmeticException | NullPointerException ex) {
+            System.out.println("Exception: " + ex.getMessage());
+            // ex.printStackTrace();  // "rastros" do erro
         }
         System.out.println("Fim do metodo1");
     }
@@ -21,8 +21,9 @@ public class Fluxo {
         System.out.println("Inicio do metodo2");
         for (int i = 1; i <= 5; i++) {
             System.out.println(i);
-            int divisaoInteira = i / 0;
-            // Se o try/catch estivesse aqui, o loop todo seria efetuado
+//            int divisaoInteira = i / 0;
+            RaiseErrors errors = null;
+            errors.foo();
         }
         System.out.println("Fim do metodo2");
     }
